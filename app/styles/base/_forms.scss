@@ -1,0 +1,509 @@
+// http://www.purecss.io/forms
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+// @mixin sa-input-generator($textColor, $focusOutlineColor) {
+ 
+//     @include placeholder {
+//         color: $shiftGray;
+//     }
+
+//     &:not([type="checkbox"]) {
+//         @include border-radius($borderRadius);
+//         background: white;
+//         border: solid $shiftGray 1px;
+//         box-shadow: inset 0 1px 3px #ddd;
+//         display: inline-block;
+
+//         &:focus {
+//             outline: none;
+//             border-color: $focusOutlineColor;
+//         }
+//     }
+    
+
+//     &[type="checkbox"]:focus {
+//         box-shadow: 0px 0px 0px 1px $shiftBlue;
+//         @include border-radius($borderRadius);
+//         outline: none;
+//         // outline: solid $focusOutlineColor 1px;
+//         // border-color: $focusOutlineColor;
+//     }
+// }
+
+// @mixin sa-form-generator($textColor, $focusOutlineColor) {
+//     @extend .helvetica;
+//     & input {
+//         @include sa-input-generator($textColor, $focusOutlineColor);
+//     }
+
+//     & select {
+//         @include border-radius($borderRadius);
+//         border: solid $shiftGray 1px;
+//         box-shadow: inset 0 1px 3px #ddd;
+
+//         &:focus {
+//             outline: none;
+//             border-color: $focusOutlineColor;
+//         }
+//     }
+// }
+
+// @mixin sa-input-size-generator($fontSize, $margin, $padding) {
+//     font-size: $fontSize;
+//     margin: $margin;
+//     padding: $padding;
+
+//     &[type="checkbox"] {
+//         font-size: 100%;
+//     }
+// }
+
+// @mixin sa-form-title-generator($fontSize, $marginSize) {
+//     @extend .oswald_med;
+//     font-size: $fontSize;
+//     margin-bottom: $marginSize;
+//     text-align: center;
+// }
+
+// @mixin sa-form-subtitle-generator($fontSize) {
+//     @extend .oswald_med;
+//     font-size: $fontSize;
+//     margin-bottom: 20px;
+//     text-align: center;
+// }
+
+// @mixin sa-form-control-group-generator($labelWidth) {
+//     & label {
+//         display: inline-block;
+//         text-align: right;
+//         width: $labelWidth;
+//     }
+
+//     & input {
+//         margin-right: 15px;
+//     }
+// }
+
+// .sa_form_checkbox_group {
+//     margin-bottom: 6px;
+
+//     & input[type="checkbox"] {
+//         display: inline-block;
+//         text-align: right;
+//     }
+
+//     & label {
+//         display: inline-block;
+//         text-align: left;
+//     }
+// }
+
+// .sa_form_controls {
+//     margin-top: 15px;
+//     text-align: center;
+// }
+
+// .sa_form_select_wrapper {
+//     @include border-radius($borderRadius);
+//     background: white;
+//     display: inline-block;
+//     position: relative;
+//     padding: 0;
+//     margin: 0 14px 0 0;
+
+//     & select {
+//         position: relative;
+//         display: inline-block;
+//         margin: 0;
+//         -moz-appearance: window;
+//         -moz-padding-end: 19px;
+//         background: transparent;
+//         -webkit-appearance: none;
+//         appearance: none;
+//         -o-appearance: none;
+
+//         &.sa_input_small {
+//             padding: 6px 30px 6px 10px;
+//             width: 162px;
+//         }
+
+//         &.sa_input_medium {
+//             padding: 8px 10px;
+//             width: 207px;
+//         }
+//     }
+
+//     & .arrow {
+//         // TODO: Use triangle mixin from _shapes.scss
+//         position: absolute;
+//         margin: 0;
+//         top: 14px;
+//         right: 10px;
+//         display: inline-block;
+//         width: 0;
+//         height: 0;
+//         border-bottom: none;
+//         border-left: 4px solid transparent;
+//         border-right: 4px solid transparent;
+//         border-top: 4px solid #333333;
+//     }
+// }
+
+
+// START NEW CODE
+
+$saFormFontSizeSmall: .85em;
+$saFormFontSizeMedium: 1em;
+$saFormFontSizeLarge: 1.2em;
+$saFormFieldWidthSmall: 155px;
+$saFormFieldWidthMedium: 184px;
+
+.sa_select_wrapper {
+    @include border-radius($borderRadius);
+    background: white;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0 6px;
+
+    & select {
+        @include border-radius($borderRadius);
+        appearance: none;
+        background: transparent;
+        border-color: $shiftGray;
+        box-shadow: inset 0 1px 3px #ddd;
+        display: inline-block;
+        margin: 0;
+        outline: none;
+        position: relative;
+        -moz-appearance: window;
+        -moz-padding-end: 19px;
+        -webkit-appearance: none;
+        -o-appearance: none;
+    }
+
+    & .arrow {
+        // TODO: Use triangle mixin from _shapes.scss
+        position: absolute;
+        margin: 0;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-bottom: none;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #333333;
+    }
+
+    &.sa_small {
+        & select {
+            font-size: $saFormFontSizeSmall;
+            padding: 4px 20px 4px 8px;
+            width: $saFormFieldWidthSmall;
+        }
+
+        & .arrow {
+            top: 10px;
+            right: 10px;
+        }
+    }
+
+    &.sa_medium {
+        & select {
+            font-size: $saFormFontSizeSmall;
+            padding: 6px 22px 6px 10px;
+            width: $saFormFieldWidthMedium;
+        }
+        & .arrow {
+            top: 14px;
+            right: 10px;
+        }
+    }
+
+    &.sa_large {
+
+    }
+
+    &.sa_darktheme {
+        & select:focus {
+            box-shadow: inset 0 0 1px lighten($shiftBlue, 5%);
+        }
+    }
+
+    &.sa_lighttheme {
+        & select:focus {
+            box-shadow: inset 0 0 1px $shiftBlue;
+        }
+    }
+}
+
+.sa_checkbox_wrapper {
+    margin-bottom: 6px;
+
+    & input[type="checkbox"] {
+        display: inline-block;
+        text-align: right;
+    }
+
+    & label {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.sa_label {
+    @extend .helvetica;
+
+    &.sa_small {
+        font-size: $saFormFontSizeSmall;
+    }
+
+    &.sa_medium {
+        font-size: $saFormFontSizeMedium;
+    }
+
+    &.sa_large {
+        font-size: $saFormFontSizeLarge;
+    }
+
+    &.sa_darktheme {
+        color: $shiftOffwhite;
+    }
+
+    &.sa_lighttheme {
+        color: $shiftCharcoal;
+    }
+}
+
+.sa_input {
+    @extend .helvetica;
+
+    @include placeholder {
+        color: $shiftGray;
+    }
+
+    &:not([type="checkbox"]) {
+        @include border-radius($borderRadius);
+        background: white;
+        border: solid $shiftGray 1px;
+        box-shadow: inset 0 1px 3px #ddd;
+        display: inline-block;
+        outline: none;
+    }
+
+    &[type="checkbox"] {
+        font-size: 100%;
+    }
+
+    &.sa_small {
+        font-size: $saFormFontSizeSmall;
+        margin: 0 6px;
+        padding: 4px 8px;
+
+        &:not([type="checkbox"]) {
+            width: $saFormFieldWidthSmall - 16px;
+        }
+    }
+
+    &.sa_medium {
+        font-size: $saFormFontSizeMedium;
+        margin: 0 6px;
+        padding: 6px 10px;
+
+        &:not([type="checkbox"]) {
+            width: $saFormFieldWidthMedium - 20px;
+        }
+    }
+
+    &.sa_large {
+        font-size: $saFormFontSizeLarge;
+        margin: 0 8px;
+        padding: 8px 12px;
+    }
+
+    &.sa_darktheme {
+        color: $shiftCharcoal;
+
+        &:focus {
+            border-color: lighten($shiftBlue, 5%);
+        }
+    }
+
+    &.sa_lighttheme {
+        color: $shiftCharcoal;
+
+        &:focus {
+            border-color: $shiftBlue;
+        }
+    }
+
+}
+
+.sa_form_title {
+    @extend .oswald_med;
+    text-align: center;
+
+    &.sa_small {
+        font-size: 2.2em;
+        margin-bottom: 5px;
+    }
+
+    &.sa_medium {
+        font-size: 2.4em;
+        margin-bottom: 8px;
+    }
+
+    &.sa_large {
+
+    }
+
+    &.sa_darktheme {
+        color: $shiftGray;
+    }
+
+    &.sa_lighttheme {
+        color: darken($shiftGray, 8%);
+    }
+}
+
+.sa_form_subtitle {
+    @extend .oswald_med;
+    text-align: center;
+
+    &.sa_small {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    &.sa_medium {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    &.sa_large {
+
+    }
+
+    &.sa_darktheme {
+        color: $shiftOffwhite;
+    }
+
+    &.sa_lighttheme {
+        color: $shiftCharcoal;
+    }
+}
+
+.sa_form_group {
+    & label {
+        display: inline-block;
+        text-align: right;
+    }
+
+    &.sa_small {
+        margin-bottom: 4px;
+
+        & label {
+            width: 6.5em;
+        }
+    }
+
+    &.sa_medium {
+        margin-bottom: 6px;
+
+        & label {
+            width: 6.8em;
+        }
+    }
+
+    &.sa_large {
+    }
+}
+
+.sa_form_controls {
+    text-align: center;
+
+    &.sa_small {
+        margin-top: 15px;
+    }
+
+    &.sa_medium {
+        margin-top: 15px;
+    }
+
+    &.sa_large {
+        margin-top: 15px;
+    }
+}
+
+.sa_form_content_wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.sa_form {
+    &.sa_darktheme {
+        & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle {
+            @extend .sa_darktheme;
+        }
+    }
+
+    &.sa_lighttheme {
+        & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle {
+            @extend .sa_lighttheme;
+        }
+    }
+}
+
+// END NEW CODE
+
+
+
+
+// .sa_form_title_small {
+//     @include sa-form-title-generator(1.6em, 5px);
+// }
+
+// .sa_form_title_medium {
+//     @include sa-form-title-generator(1.8em, 10px);
+// }
+
+// .sa_form_subtitle_small {
+//     @include sa-form-subtitle-generator(1.4em);
+// }
+
+// .sa_form_subtitle_medium {
+//     @include sa-form-subtitle-generator(1.6em);
+// }
+
+// .sa_form_control_group_small {
+//     @include sa-form-control-group-generator(6.3em);
+
+//     & input, label {
+//         @extend .sa_input_small;
+//     }
+// }
+
+// .sa_form_control_group_medium {
+//     @include sa-form-control-group-generator(6.5em);
+
+//     & input, label {
+//         @extend .sa_input_medium;
+//     }
+// }
