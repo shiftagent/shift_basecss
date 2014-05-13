@@ -3,17 +3,17 @@
   cursor: pointer;
   outline: none;
   text-decoration: none;
- 
+
+  &:visited {
+    color: $linkColor;
+  }
+
   &:hover {
     color: $hoverColor;
   }
- 
+
   &:active {
     color: darken($linkColor, 10%);
-  }
- 
-  &:visited {
-    color: $linkColor;
   }
 }
 
