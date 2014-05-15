@@ -1,16 +1,17 @@
 // Base Colors
-$shiftGreen: #94ba65;
-$shiftBlue: #00b3b5;
-$shiftOrange: #ff9035;
-$shiftRouge: #983434;
-$shiftOffwhite: #e9e9e9;
-$shiftGray: #bcbcbc;
+$shiftGreen: #94ba65;         //  rgb 148,186,101
+$shiftBlue: #00b3b5;          //  rgb 0,179,181
+$shiftOrange: #ff9035;        //  rgb 255,144,53
+$shiftRouge: #983434;         //  rgb 152,52,52
+$shiftOffwhite: #e9e9e9;      //  rgb 233,233,233
+$shiftGray: #bcbcbc;          //  rgb  188,188,188
 
-$shiftBlueDarker: #0a8789;
-$shiftOrangedarker: #be7030;
-$shiftTan: #C2B49A;
-$shiftMint: #ACD4CC;
-$shiftSalmon: #E87162;
+$shiftBlueDarker: #0a8789;    //  rgb  10,135,137
+$shiftOrangedarker: #be7030;  //  rgb 190,112,48
+$shiftTan: #C2B49A;           //  rgb 194,180,154
+$shiftMint: #ACD4CC;          //  rgb  172,212,204
+$shiftSalmon: #E87162;        // rgb 232,113,98
+$shiftYellow: #f9e435;        // rgb 249,228,53
 
 $shiftBlueNDarkest: darken($shiftBlueDarker, 7%);
 
