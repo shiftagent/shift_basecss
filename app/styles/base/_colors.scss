@@ -18,7 +18,7 @@ $shiftBlueNDarkest: darken($shiftBlueDarker, 7%);
 $shiftLightestGray: lighten($shiftGray, 10%);
 $shiftDarkgray: #4c4c4c;
 $shiftLightGray: lighten($shiftDarkgray, 30%);
-$shiftCharcoal: #232323;
+$shiftCharcoal: #232323;    // rgb (35,35,35)
 $shiftCharcoalShadow: lighten($shiftCharcoal, 16%);
 
 $darkTextColor: $shiftCharcoal;
