@@ -17,6 +17,7 @@ $shiftBlueNDarkest: darken($shiftBlueDarker, 7%);
 
 $shiftLightestGray: lighten($shiftGray, 10%);
 $shiftDarkgray: #4c4c4c;
+$shiftDarkgraySchedule: #424242;
 $shiftLightGray: lighten($shiftDarkgray, 30%);
 $shiftCharcoal: #232323;    // rgb (35,35,35)
 $shiftCharcoalShadow: lighten($shiftCharcoal, 16%);
@@ -36,7 +37,7 @@ $shiftBlueDarker: darken($shiftBlue, 8%);
 
 $body_background_color : #2c2c2c !default;
 $logo_accent_color: $shiftBlue !default;
-$profile_tab_settings_color: #999 !default;
+$profile_tab_settings_color: #999999 !default;
 $green_status: $shiftGreen !default;
 $main_menu_button_text_color: white !default;
 $modal_text_color_lighter: #aaa !default;
