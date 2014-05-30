@@ -1,5 +1,3 @@
-// http://www.purecss.io/forms
-
 @mixin placeholder {
   &::-webkit-input-placeholder {
     @content;
@@ -18,162 +16,19 @@
   }
 }
 
-// @mixin sa-input-generator($textColor, $focusOutlineColor) {
- 
-//     @include placeholder {
-//         color: $shiftGray;
-//     }
-
-//     &:not([type="checkbox"]) {
-//         @include border-radius($borderRadius);
-//         background: white;
-//         border: solid $shiftGray 1px;
-//         box-shadow: inset 0 1px 3px #ddd;
-//         display: inline-block;
-
-//         &:focus {
-//             outline: none;
-//             border-color: $focusOutlineColor;
-//         }
-//     }
-
-
-//     &[type="checkbox"]:focus {
-//         box-shadow: 0px 0px 0px 1px $shiftBlue;
-//         @include border-radius($borderRadius);
-//         outline: none;
-//         // outline: solid $focusOutlineColor 1px;
-//         // border-color: $focusOutlineColor;
-//     }
-// }
-
-// @mixin sa-form-generator($textColor, $focusOutlineColor) {
-//     @extend .helvetica;
-//     & input {
-//         @include sa-input-generator($textColor, $focusOutlineColor);
-//     }
-
-//     & select {
-//         @include border-radius($borderRadius);
-//         border: solid $shiftGray 1px;
-//         box-shadow: inset 0 1px 3px #ddd;
-
-//         &:focus {
-//             outline: none;
-//             border-color: $focusOutlineColor;
-//         }
-//     }
-// }
-
-// @mixin sa-input-size-generator($fontSize, $margin, $padding) {
-//     font-size: $fontSize;
-//     margin: $margin;
-//     padding: $padding;
-
-//     &[type="checkbox"] {
-//         font-size: 100%;
-//     }
-// }
-
-// @mixin sa-form-title-generator($fontSize, $marginSize) {
-//     @extend .oswald_med;
-//     font-size: $fontSize;
-//     margin-bottom: $marginSize;
-//     text-align: center;
-// }
-
-// @mixin sa-form-subtitle-generator($fontSize) {
-//     @extend .oswald_med;
-//     font-size: $fontSize;
-//     margin-bottom: 20px;
-//     text-align: center;
-// }
-
-// @mixin sa-form-control-group-generator($labelWidth) {
-//     & label {
-//         display: inline-block;
-//         text-align: right;
-//         width: $labelWidth;
-//     }
-
-//     & input {
-//         margin-right: 15px;
-//     }
-// }
-
-// .sa_form_checkbox_group {
-//     margin-bottom: 6px;
-
-//     & input[type="checkbox"] {
-//         display: inline-block;
-//         text-align: right;
-//     }
-
-//     & label {
-//         display: inline-block;
-//         text-align: left;
-//     }
-// }
-
-// .sa_form_controls {
-//     margin-top: 15px;
-//     text-align: center;
-// }
-
-// .sa_form_select_wrapper {
-//     @include border-radius($borderRadius);
-//     background: white;
-//     display: inline-block;
-//     position: relative;
-//     padding: 0;
-//     margin: 0 14px 0 0;
-
-//     & select {
-//         position: relative;
-//         display: inline-block;
-//         margin: 0;
-//         -moz-appearance: window;
-//         -moz-padding-end: 19px;
-//         background: transparent;
-//         -webkit-appearance: none;
-//         appearance: none;
-//         -o-appearance: none;
-
-//         &.sa_input_small {
-//             padding: 6px 30px 6px 10px;
-//             width: 162px;
-//         }
-
-//         &.sa_input_medium {
-//             padding: 8px 10px;
-//             width: 207px;
-//         }
-//     }
-
-//     & .arrow {
-//         // TODO: Use triangle mixin from _shapes.scss
-//         position: absolute;
-//         margin: 0;
-//         top: 14px;
-//         right: 10px;
-//         display: inline-block;
-//         width: 0;
-//         height: 0;
-//         border-bottom: none;
-//         border-left: 4px solid transparent;
-//         border-right: 4px solid transparent;
-//         border-top: 4px solid #333333;
-//     }
-// }
-
-
-// START NEW CODE
-
 $saFormFontSizeSmall: .85em;
 $saFormFontSizeMedium: 1em;
 $saFormFontSizeLarge: 1.2em;
 $saFormFieldWidthSmall: 155px;
 $saFormFieldWidthMedium: 184px;
+$saFormInputPaddingSmall: 4px 8px;
+$saFormInputPaddingMedium: 6px 10px;
+$saFormInputPaddingLarge: 8px 12px;
+$saFormInputMarginSmall: 0 6px;
+$saFormInputMarginMedium: 0 6px;
+$saFormInputMarginLarge: 0 8px;
+$saFormInputWidthSmall: $saFormFieldWidthSmall - 16px;
+$saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
 
 .sa_select_wrapper {
   @include border-radius($borderRadius);
@@ -314,28 +169,28 @@ $saFormFieldWidthMedium: 184px;
 
   &.sa_small {
     font-size: $saFormFontSizeSmall;
-    margin: 0 6px;
-    padding: 4px 8px;
+    margin: $saFormInputMarginSmall;
+    padding: $saFormInputPaddingSmall;
 
     &:not([type="checkbox"]) {
-      width: $saFormFieldWidthSmall - 16px;
+      width: $saFormInputWidthSmall;
     }
   }
 
   &.sa_medium {
     font-size: $saFormFontSizeMedium;
-    margin: 0 6px;
-    padding: 6px 10px;
+    margin: $saFormInputMarginMedium;
+    padding: $saFormInputPaddingMedium;
 
     &:not([type="checkbox"]) {
-      width: $saFormFieldWidthMedium - 20px;
+      width: $saFormInputWidthMedium;
     }
   }
 
   &.sa_large {
     font-size: $saFormFontSizeLarge;
-    margin: 0 8px;
-    padding: 8px 12px;
+    margin: $saFormInputMarginLarge;
+    padding: $saFormInputPaddingLarge;
   }
 
   &.sa_darktheme {
@@ -470,40 +325,3 @@ $saFormFieldWidthMedium: 184px;
     }
   }
 }
-
-// END NEW CODE
-
-
-
-
-// .sa_form_title_small {
-//     @include sa-form-title-generator(1.6em, 5px);
-// }
-
-// .sa_form_title_medium {
-//     @include sa-form-title-generator(1.8em, 10px);
-// }
-
-// .sa_form_subtitle_small {
-//     @include sa-form-subtitle-generator(1.4em);
-// }
-
-// .sa_form_subtitle_medium {
-//     @include sa-form-subtitle-generator(1.6em);
-// }
-
-// .sa_form_control_group_small {
-//     @include sa-form-control-group-generator(6.3em);
-
-//     & input, label {
-//         @extend .sa_input_small;
-//     }
-// }
-
-// .sa_form_control_group_medium {
-//     @include sa-form-control-group-generator(6.5em);
-
-//     & input, label {
-//         @extend .sa_input_medium;
-//     }
-// }
