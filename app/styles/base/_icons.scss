@@ -1,3 +1,36 @@
+.sa-icon-1-2x {
+  font-size: 1.2em;
+  &.icon-border {
+    border-width: 2px;
+    @include border-radius(4px);
+  }
+}
+
+.sa-icon-2x {
+  font-size: 2em;
+  &.icon-border {
+    border-width: 2px;
+    @include border-radius(4px);
+  }
+}
+
+.sa-icon-3x {
+  font-size: 3em;
+  &.icon-border {
+    border-width: 3px;
+    @include border-radius(5px);
+  }
+}
+
+.sa-icon-4x {
+  font-size: 4em;
+  &.icon-border {
+    border-width: 4px;
+    @include border-radius(6px);
+  }
+}
+
+// Font File Information
 @font-face {
   font-family: sa-icons;
   src: url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v1/shift-agent-002.eot");
