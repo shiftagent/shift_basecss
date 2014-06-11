@@ -14,6 +14,11 @@
   &:focus {
     background-color: rgba($backgroundColor, 1.0);
   }
+  
+  &[disabled] {
+    background-color: desaturate($backgroundColor, 50%);
+    color: desaturate($textColor, 50%);
+  }
 }
 
 @mixin sa-button-size-generator($fontSize, $padding) {
