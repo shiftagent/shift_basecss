@@ -38,6 +38,17 @@
   outline: none;
   text-align: center;
 
+  &:hover {
+    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
   // Override SA size options
   &.sa_small {
     @include sa-button-size-generator(.9em, 3px 8px);
