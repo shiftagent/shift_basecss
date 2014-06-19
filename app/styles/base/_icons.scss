@@ -33,11 +33,11 @@
 // Font File Information
 @font-face {
   font-family: sa-icons;
-  src: url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v2/shift-agent-002_1402434896.eot");
-  src: url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v2/shift-agent-002_1402434896.eot#iefix") format("embedded-opentype"),
-    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v2/shift-agent-002_1402434896.woff") format("woff"),
-    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v2/shift-agent-002_1402434896.ttf") format("truetype"),
-    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v2/shift-agent-002_1402434896.svg") format("svg");
+  src: url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v3/shift-agent-002.eot");
+  src: url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v3/shift-agent-002.eot#iefix") format("embedded-opentype"),
+    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v3/shift-agent-002.woff") format("woff"),
+    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v3/shift-agent-002.ttf") format("truetype"),
+    url("https://s3.amazonaws.com/shift_assets/fonts/shift_icons/v3/shift-agent-002.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -304,4 +304,19 @@
 }
 .sa-icon-edit:before {
   content: "m";
+}
+.sa-feedback:before {
+  content: "G";
+}
+.sa-people-man:before {
+  content: "=";
+}
+.sa-people-woman:before {
+  content: ">";
+}
+.sa-people-woman-handsup:before {
+  content: "?";
+}
+.sa-people-working:before {
+  content: "@";
 }
