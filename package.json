@@ -15,7 +15,7 @@
 	],
 	"repository": "",
 	"readme": "",
-	"version": "0.0.11",
+	"version": "0.0.15",
 	"dependencies": {},
 	"devDependencies": {
 		"grunt": "~0.4.1",
