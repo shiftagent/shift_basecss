@@ -37,6 +37,7 @@
 .sa_button {
   @extend .helvetica;
   @include border-radius($borderRadius);
+  @include make-unselectable();
   border: solid 1px transparent;
   cursor: pointer;
   display: inline-block;
