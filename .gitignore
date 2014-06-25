@@ -175,3 +175,5 @@ codekit-config.json
 
 .jshintrc
 .editorconfig
+*.sublime-project
+*.sublime-workspace
