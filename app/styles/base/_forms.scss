@@ -16,9 +16,9 @@
   }
 }
 
-$saFormFontSizeSmall: .85em;
-$saFormFontSizeMedium: 1em;
-$saFormFontSizeLarge: 1.2em;
+$saFormFontSizeSmall: 14px;
+$saFormFontSizeMedium: 16px;
+$saFormFontSizeLarge: 18px;
 $saFormFieldWidthSmall: 155px;
 $saFormFieldWidthMedium: 184px;
 $saFormInputPaddingSmall: 4px 8px;
@@ -296,6 +296,110 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
   }
 
   &.sa_large {
+  }
+
+  .sa_input_prepend, .sa_input_append {
+    display: inline-block;
+    font-size: 0px;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    .sa_input {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .add-on {
+      background-color: white;
+      border: solid $shiftGray 1px;
+      color: black;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &.sa_small {
+      .add-on {
+        font-size: $saFormFontSizeSmall;
+        margin: $saFormInputMarginSmall;
+        padding: nth($saFormInputPaddingSmall, 1) 4px;
+      }
+
+      .sa_input {
+        font-size: $saFormFontSizeSmall;
+        margin: $saFormInputMarginSmall;
+        padding: $saFormInputPaddingSmall;
+      }
+    }
+
+    &.sa_medium {
+      .add-on {
+        font-size: $saFormFontSizeMedium;
+        margin: $saFormInputMarginMedium;
+        padding: nth($saFormInputPaddingMedium, 1) 6px;
+      }
+
+      .sa_input {
+        font-size: $saFormFontSizeMedium;
+        margin: $saFormInputMarginMedium;
+        padding: $saFormInputPaddingMedium;
+      }
+    }
+  }
+
+
+  .sa_input_prepend {
+    .sa_input {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-left: 0 !important;
+    }
+
+    .add-on:first-child {
+      @include border-radius($borderRadius 0 0 $borderRadius);
+      margin-right: -1px !important;
+      min-width: 16px;
+    }
+
+    &.sa_small .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthSmall - 24px;
+    }
+
+    &.sa_medium .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthMedium - 28px;
+    }
+  }
+
+  .sa_input_append {
+    .sa_input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-right: 0 !important;
+    }
+
+    .add-on:last-child {
+      @include border-radius(0 $borderRadius $borderRadius 0);
+      border-left: none;
+      margin-left: 0 !important;
+      min-width: 22px;
+    }
+
+    &.sa_small .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthSmall - 30px;
+    }
+
+    &.sa_medium .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthMedium - 34px;
+    }
+  }
+
+  .sa_input_append.sa_input_prepend {
+    &.sa_small .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthSmall - 54px;
+    }
+
+    &.sa_medium .sa_input:not([type="checkbox"]) {
+      width: $saFormInputWidthMedium - 62px;
+    }
   }
 }
 
