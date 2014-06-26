@@ -12,6 +12,6 @@ x="${x%/*}"
 echo "Linking..."
 echo "       ${x}/components/shift_basecss/styles/base"
 echo "to:    ${x}/styles/base"
-ln -s ${x}/components/shift_basecss/app/styles/base ${x}/styles/base
+ln -s ${x}/components/shift_basecss/app/styles/base ${x}/styles/shift/base
 
 echo "shift_basecss: All linked up!"
