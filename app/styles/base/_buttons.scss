@@ -56,6 +56,11 @@
   }
 
   // Override SA size options
+  &.sa_tiny {
+    @include sa-button-size-generator(.8em, 0px 6px);
+    @include sa-button-icon-spacing(0 6px 0 0, inherit, inherit);
+  }
+
   &.sa_small {
     @include sa-button-size-generator(.9em, 3px 8px);
     @include sa-button-icon-spacing(0 6px 0 0, inherit, inherit);
