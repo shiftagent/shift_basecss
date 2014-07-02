@@ -15,15 +15,17 @@
     @content;
   }
 }
-
+$saFormFontSizeTiny: 12px;
 $saFormFontSizeSmall: 14px;
 $saFormFontSizeMedium: 16px;
 $saFormFontSizeLarge: 18px;
 $saFormFieldWidthSmall: 155px;
 $saFormFieldWidthMedium: 184px;
+$saFormInputPaddingTiny: 0px 4px;
 $saFormInputPaddingSmall: 4px 8px;
 $saFormInputPaddingMedium: 6px 10px;
 $saFormInputPaddingLarge: 8px 12px;
+$saFormInputMarginTiny: 0 6px;
 $saFormInputMarginSmall: 0 6px;
 $saFormInputMarginMedium: 0 6px;
 $saFormInputMarginLarge: 0 8px;
@@ -165,6 +167,16 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
 
   &[type="checkbox"] {
     font-size: 100%;
+  }
+
+  &.sa_tiny {
+    font-size: $saFormFontSizeTiny;
+    margin: $saFormInputMarginTiny;
+    padding: $saFormInputPaddingTiny;
+
+    &:not([type="checkbox"]) {
+      width: $saFormInputWidthSmall;
+    }
   }
 
   &.sa_small {
