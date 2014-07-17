@@ -1,10 +1,14 @@
-@mixin sa-button-color-generator($textColor, $backgroundColor, $borderColor) {
-  background-color: rgba($backgroundColor, 0.7);
-  border-color: $borderColor;
+$buttonFadeDuration: .1s;
+
+@mixin sa-button-color-generator($textColor, $backgroundColor) {
+  background-color: $backgroundColor;
   color: $textColor;
+  @include transition-property(background-color);
+  @include transition-duration($buttonFadeDuration);
+  @include transition-timing-function(ease-out);
 
   &:hover {
-    background-color: rgba($backgroundColor, 1.0);
+    background-color: lighten($backgroundColor, 10%);
   }
 
   &:active {
@@ -14,7 +18,7 @@
   &:focus {
     background-color: rgba($backgroundColor, 1.0);
   }
-  
+
   &[disabled] {
     background-color: desaturate($backgroundColor, 50%);
     color: desaturate($textColor, 50%);
@@ -30,15 +34,22 @@
   & i {
     font-size: $font-size;
     line-height: $line-height;
-    margin: $margin;
+  }
+
+  & i.left {
+    margin-right: $margin;
+  }
+
+  & i.right {
+    margin-left: $margin;
   }
 }
 
 .sa_button {
   @extend .helvetica;
-  @include border-radius($borderRadius);
+  @include border-radius(2px);
   @include make-unselectable();
-  border: solid 1px transparent;
+  border: none;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -58,46 +69,109 @@
   // Override SA size options
   &.sa_tiny {
     @include sa-button-size-generator(.8em, 0px 6px);
-    @include sa-button-icon-spacing(0 6px 0 0, inherit, inherit);
+    @include sa-button-icon-spacing(6px, inherit, inherit);
   }
 
   &.sa_small {
-    @include sa-button-size-generator(.9em, 3px 8px);
-    @include sa-button-icon-spacing(0 6px 0 0, inherit, inherit);
+    @include sa-button-size-generator(.9em, 3px 12px 5px);
+    @include sa-button-icon-spacing(6px, inherit, inherit);
   }
 
   &.sa_medium {
-    @include sa-button-size-generator(1.1em, 8px 10px);
-    @include sa-button-icon-spacing(0 8px 0 0, inherit, inherit);
+    @include sa-button-size-generator(1.1em, 8px 14px);
+    @include sa-button-icon-spacing(8px, inherit, inherit);
   }
 
   &.sa_large {
-    @include sa-button-size-generator(1.8em, 14px 16px);
-    @include sa-button-icon-spacing(0 14px 0 0, inherit, inherit);
+    @include sa-button-size-generator(1.8em, 16px 30px);
+    @include sa-button-icon-spacing(14px, inherit, inherit);
   }
 
   // Override SA color options
   &.sa_blue {
-    @include sa-button-color-generator(white, $shiftBlue, $shiftBlue);
+    @include sa-button-color-generator(white, $shiftButtonBlue);
   }
 
   &.sa_orange {
-    @include sa-button-color-generator(white, $shiftOrange, $shiftOrange);
+    @include sa-button-color-generator(white, $shiftOrange);
   }
 
   &.sa_green {
-    @include sa-button-color-generator(white, $shiftGreen, $shiftGreen);
+    @include sa-button-color-generator(white, $shiftGreen);
   }
 
   &.sa_salmon {
-    @include sa-button-color-generator(white, $shiftSalmon, $shiftSalmon);
+    @include sa-button-color-generator(white, $shiftSalmon);
   }
 
   &.sa_gray {
-    @include sa-button-color-generator($shiftCharcoal, $shiftGray, $shiftGray);
+    @include sa-button-color-generator($shiftCharcoal, $shiftGray);
   }
 
   &.sa_rouge {
-    @include sa-button-color-generator(white, $shiftRouge, $shiftRouge);
+    @include sa-button-color-generator(white, $shiftRouge);
   }
+}
+
+// This is a special class for using icons that do not space properly
+// (e.g. Forward/Back chevron arrows)
+//
+// sa_button has some styling for other icons that display properly
+// without special sizing workarounds.
+.sa_icon_button {
+  @extend .sa_button;
+
+  i {
+    position: relative;
+  }
+
+  &.sa_tiny i {
+    top: 2px;
+  }
+
+  &.sa_small {
+    @include sa-button-icon-spacing(0, inherit, inherit);
+    i {
+      top: 2px;
+
+      &.left {
+        left: -4px;
+      }
+
+      &.right {
+        right: -4px;
+      }
+    }
+  }
+
+  &.sa_medium {
+    @include sa-button-icon-spacing(2px, inherit, inherit);
+    i {
+      top: 3px;
+
+      &.left {
+        left: -6px;
+      }
+
+      &.right {
+        right: -6px;
+      }
+    }
+  }
+
+  &.sa_large {
+    @include sa-button-icon-spacing(8px, inherit, inherit);
+    i {
+      top: 4px;
+
+      &.left {
+        left: -8px;
+      }
+
+      &.right {
+        right: -8px;
+      }
+    }
+  }
+
 }
