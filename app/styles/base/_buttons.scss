@@ -22,6 +22,7 @@ $buttonFadeDuration: .1s;
   &[disabled] {
     background-color: desaturate($backgroundColor, 50%);
     color: desaturate($textColor, 50%);
+    cursor: default;
   }
 }
 
@@ -78,7 +79,7 @@ $buttonFadeDuration: .1s;
   }
 
   &.sa_medium {
-    @include sa-button-size-generator(1.1em, 8px 14px);
+    @include sa-button-size-generator(1.2em, 6px 16px);
     @include sa-button-icon-spacing(8px, inherit, inherit);
   }
 
@@ -145,7 +146,7 @@ $buttonFadeDuration: .1s;
   }
 
   &.sa_medium {
-    @include sa-button-icon-spacing(2px, inherit, inherit);
+    @include sa-button-icon-spacing(-8px, inherit, inherit);
     i {
       top: 3px;
 

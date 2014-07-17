@@ -61,6 +61,9 @@ $saFormDarkThemeLabelFontColor: $shiftGray;
 $saFormDarkThemeValidBorderColor: $shiftBlue;
 $saFormDarkThemeInvalidBorderColor: $shiftRouge;
 
+// Animations
+$saFormInputBorderFadeDuration: .2s;
+
 .sa_select_wrapper {
   @include border-radius($saFormBorderRadius);
   background: $saFormInputBackgroundColor;
@@ -84,7 +87,9 @@ $saFormDarkThemeInvalidBorderColor: $shiftRouge;
     -webkit-appearance: none;
     -o-appearance: none;
 
-    @include transition-property();
+    @include transition-property(border-color);
+    @include transition-duration($saFormInputBorderFadeDuration);
+    @include transition-timing-function(ease-out);
   }
 
   & .arrow {
@@ -194,6 +199,11 @@ $saFormDarkThemeInvalidBorderColor: $shiftRouge;
     border-color: transparent;
     display: inline-block;
     outline: none;
+    @include box-shadow(none !important);
+
+    @include transition-property(border-color);
+    @include transition-duration($saFormInputBorderFadeDuration);
+    @include transition-timing-function(ease-out);
   }
 
   &[type="checkbox"] {
