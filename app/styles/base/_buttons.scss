@@ -22,6 +22,7 @@ $buttonFadeDuration: .1s;
   &[disabled] {
     background-color: desaturate($backgroundColor, 50%);
     color: desaturate($textColor, 50%);
+    cursor: default;
   }
 }
 
