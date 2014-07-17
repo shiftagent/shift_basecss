@@ -194,6 +194,7 @@ $saFormDarkThemeInvalidBorderColor: $shiftRouge;
     border-color: transparent;
     display: inline-block;
     outline: none;
+    @include box-shadow(none !important);
   }
 
   &[type="checkbox"] {
