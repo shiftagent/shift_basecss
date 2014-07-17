@@ -15,37 +15,66 @@
     @content;
   }
 }
+
+// Font Sizes
 $saFormFontSizeTiny: 12px;
 $saFormFontSizeSmall: 14px;
 $saFormFontSizeMedium: 16px;
 $saFormFontSizeLarge: 18px;
+
+// Widths
 $saFormFieldWidthSmall: 155px;
 $saFormFieldWidthMedium: 184px;
-$saFormInputPaddingTiny: 0px 4px;
-$saFormInputPaddingSmall: 4px 8px;
-$saFormInputPaddingMedium: 6px 10px;
-$saFormInputPaddingLarge: 8px 12px;
+$saFormInputWidthSmall: $saFormFieldWidthSmall - 16px;
+$saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
+
+// Paddings
+$saFormInputPaddingTiny: 0px 2px;
+$saFormInputPaddingSmall: 4px 6px;
+$saFormInputPaddingMedium: 6px 8px;
+$saFormInputPaddingLarge: 8px 10px;
+
+// Margins
 $saFormInputMarginTiny: 0 6px;
 $saFormInputMarginSmall: 0 6px;
 $saFormInputMarginMedium: 0 6px;
 $saFormInputMarginLarge: 0 8px;
-$saFormInputWidthSmall: $saFormFieldWidthSmall - 16px;
-$saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
+
+// Borders
+$saFormBorderRadius: 2px;
+$saFormBorderThickness: 1px;
+
+// Colors
+$saFormPlaceholderFontColor: $shiftGray;
+$saFormAddonFontColor: black;
+$saFormInputBackgroundColor: white;
+
+// Light Theme Colors
+$saFormLightThemeFontColor: $shiftCharcoal;
+$saFormLightThemeLabelFontColor: $shiftCharcoal;
+$saFormLightThemeValidBorderColor: $shiftBlue;
+$saFormLightThemeInvalidBorderColor: $shiftRouge;
+
+// Dark Theme Colors
+$saFormDarkThemeFontColor: $shiftCharcoal;
+$saFormDarkThemeLabelFontColor: $shiftGray;
+$saFormDarkThemeValidBorderColor: $shiftBlue;
+$saFormDarkThemeInvalidBorderColor: $shiftRouge;
 
 .sa_select_wrapper {
-  @include border-radius($borderRadius);
-  background: white;
+  @include border-radius($saFormBorderRadius);
+  background: $saFormInputBackgroundColor;
   display: inline-block;
   position: relative;
   padding: 0;
   margin: 0 6px;
 
   & select {
-    @include border-radius($borderRadius);
+    @include border-radius($saFormBorderRadius);
     appearance: none;
     background: transparent;
-    border-color: $shiftGray;
-    box-shadow: inset 0 1px 3px #ddd;
+    border: solid $saFormBorderThickness;
+    border-color: transparent;
     display: inline-block;
     margin: 0;
     outline: none;
@@ -54,6 +83,8 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     -moz-padding-end: 19px;
     -webkit-appearance: none;
     -o-appearance: none;
+
+    @include transition-property();
   }
 
   & .arrow {
@@ -100,13 +131,13 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
 
   &.sa_darktheme {
     & select:focus {
-      box-shadow: inset 0 0 1px lighten($shiftBlue, 5%);
+      border-color: $saFormDarkThemeValidBorderColor;
     }
   }
 
   &.sa_lighttheme {
     & select:focus {
-      box-shadow: inset 0 0 1px $shiftBlue;
+      border-color: $saFormLightThemeValidBorderColor;
     }
   }
 }
@@ -141,11 +172,11 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
   }
 
   &.sa_darktheme {
-    color: $shiftOffwhite;
+    color: $saFormDarkThemeLabelFontColor;
   }
 
   &.sa_lighttheme {
-    color: $shiftCharcoal;
+    color: $saFormLightThemeLabelFontColor;
   }
 }
 
@@ -153,14 +184,14 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
   @extend .helvetica;
 
   @include placeholder {
-    color: $shiftGray;
+    color: $saFormPlaceholderFontColor;
   }
 
   &:not([type="checkbox"]) {
-    @include border-radius($borderRadius);
-    background: white;
-    border: solid $shiftGray 1px;
-    box-shadow: inset 0 1px 3px #ddd !important;
+    @include border-radius($saFormBorderRadius);
+    background: $saFormInputBackgroundColor;
+    border: solid $saFormBorderThickness;
+    border-color: transparent;
     display: inline-block;
     outline: none;
   }
@@ -209,7 +240,19 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     color: $shiftCharcoal;
 
     &:focus {
-      border-color: lighten($shiftBlue, 5%);
+      border-color: $saFormDarkThemeValidBorderColor;
+    }
+
+    &.ng-invalid.ng-dirty, &.ng-invalid.ng-dirty:focus {
+      border-color: $saFormDarkThemeInvalidBorderColor;
+    }
+
+    &.ng-invalid.ng-pristine {
+      border-color: transparent;
+    }
+
+    &:focus, &.ng-pristine:focus, &.ng-valid:focus {
+      border-color: $saFormDarkThemeValidBorderColor;
     }
   }
 
@@ -217,15 +260,15 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     color: $shiftCharcoal;
 
     &.ng-invalid.ng-dirty, &.ng-invalid.ng-dirty:focus {
-      border-color: $shiftRouge;
+      border-color: $saFormLightThemeInvalidBorderColor;
     }
 
     &.ng-invalid.ng-pristine {
-      border-color: $shiftGray;
+      border-color: transparent;
     }
 
     &:focus, &.ng-pristine:focus, &.ng-valid:focus {
-      border-color: $shiftBlue;
+      border-color: $saFormLightThemeValidBorderColor;
     }
   }
 
@@ -322,9 +365,10 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     }
 
     .add-on {
-      background-color: white;
-      border: solid $shiftGray 1px;
-      color: black;
+      background-color: $saFormInputBackgroundColor;
+      border: solid $saFormBorderThickness;
+    border-color: transparent;
+      color: $saFormAddonFontColor;
       display: inline-block;
       vertical-align: top;
     }
@@ -367,7 +411,7 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     }
 
     .add-on:first-child {
-      @include border-radius($borderRadius 0 0 $borderRadius);
+      @include border-radius($saFormBorderRadius 0 0 $saFormBorderRadius);
       margin-right: -1px !important;
       min-width: 16px;
     }
@@ -389,7 +433,7 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
     }
 
     .add-on:last-child {
-      @include border-radius(0 $borderRadius $borderRadius 0);
+      @include border-radius(0 $saFormBorderRadius $saFormBorderRadius 0);
       border-left: none;
       margin-left: 0 !important;
       min-width: 22px;
@@ -438,13 +482,13 @@ $saFormInputWidthMedium: $saFormFieldWidthMedium - 20px;
 
 .sa_form {
   &.sa_darktheme {
-    & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle {
+    & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle, .sa_select_wrapper {
       @extend .sa_darktheme;
     }
   }
 
   &.sa_lighttheme {
-    & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle {
+    & .sa_label, .sa_input, .sa_form_title, .sa_form_subtitle, .sa_select_wrapper {
       @extend .sa_lighttheme;
     }
   }
