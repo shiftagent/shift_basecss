@@ -1,0 +1,28 @@
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin circlePopAnimationGenerator($animationName, $finalSize, $color) {
+  @include keyframes(#{$animationName}) {
+    0% {
+      @include circle(0px, $color);
+      opacity: 1;
+    }
+
+    100% {
+      @include circle($finalSize, $color);
+      opacity: 0;
+    }
+  }
+}
