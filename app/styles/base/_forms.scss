@@ -54,12 +54,14 @@ $saFormLightThemeFontColor: $shiftCharcoal;
 $saFormLightThemeLabelFontColor: $shiftCharcoal;
 $saFormLightThemeValidBorderColor: $shiftBlue;
 $saFormLightThemeInvalidBorderColor: $shiftRouge;
+$saFormLightThemePristineBorderColor: $shiftGray;
 
 // Dark Theme Colors
 $saFormDarkThemeFontColor: $shiftCharcoal;
 $saFormDarkThemeLabelFontColor: $shiftGray;
 $saFormDarkThemeValidBorderColor: $shiftBlue;
 $saFormDarkThemeInvalidBorderColor: $shiftRouge;
+$saFormDarkThemePristineBorderColor: $shiftGray;
 
 // Animations
 $saFormInputBorderFadeDuration: .2s;
@@ -258,7 +260,7 @@ $saFormInputBorderFadeDuration: .2s;
     }
 
     &.ng-invalid.ng-pristine {
-      border-color: transparent;
+      border-color: $saFormDarkThemePristineBorderColor;
     }
 
     &:focus, &.ng-pristine:focus, &.ng-valid:focus {
@@ -274,7 +276,7 @@ $saFormInputBorderFadeDuration: .2s;
     }
 
     &.ng-invalid.ng-pristine {
-      border-color: transparent;
+      border-color: $saFormLightThemePristineBorderColor;
     }
 
     &:focus, &.ng-pristine:focus, &.ng-valid:focus {
