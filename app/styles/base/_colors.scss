@@ -16,6 +16,10 @@ $shiftDarkMint: darken($shiftMint, 15%);
 $shiftSeaweed: #446262; // rgb(68, 98, 98)
 $shiftAqua: #8db9ba; // rgb(141, 185, 186)
 
+$shiftNewBlue: #2facd0;
+$modalHeaderBgColor: $shiftNewBlue;
+$defaultInputTypeBorderColor: lighten($shiftGray, 10%);
+
 $shiftBlueNDarkest: darken($shiftBlueDarker, 7%);
 
 $shiftLightestGray: lighten($shiftGray, 10%);
