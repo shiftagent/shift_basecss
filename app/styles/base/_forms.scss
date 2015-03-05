@@ -268,13 +268,14 @@ $saFormInputBorderFadeDuration: .2s;
 
   &.sa_lighttheme {
     color: $shiftCharcoal;
+    border-color: $shiftGray;
 
     &.ng-invalid.ng-dirty, &.ng-invalid.ng-dirty:focus {
       border-color: $saFormLightThemeInvalidBorderColor;
     }
 
     &.ng-invalid.ng-pristine {
-      border-color: transparent;
+      border-color: $shiftGray;
     }
 
     &:focus, &.ng-pristine:focus, &.ng-valid:focus {
@@ -377,7 +378,7 @@ $saFormInputBorderFadeDuration: .2s;
     .add-on {
       background-color: $saFormInputBackgroundColor;
       border: solid $saFormBorderThickness;
-    border-color: transparent;
+      border-color: transparent;
       color: $saFormAddonFontColor;
       display: inline-block;
       vertical-align: top;
