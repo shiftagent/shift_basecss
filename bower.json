@@ -1,7 +1,9 @@
 {
   "name": "shift_basecss",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "authors": [
+    "Matt Webb <matt@shiftagent.org>",
+    "David Pezzoli <david@shiftagent.org>",
     "Jordan Kicklighter <jordan@shiftagent.org>"
   ],
   "description": "Shift Agent Base CSS",
