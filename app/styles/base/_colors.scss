@@ -1,8 +1,8 @@
 // Base Colors
-$shiftGreen: #94ba65;         //  rgb 148,186,101
+$shiftGreen: #84ba6a;         //  rgb 148,186,101
 $shiftBlue: #00b3b5;          //  rgb 0,179,181
 $shiftOrange: #ff9035;        //  rgb 255,144,53
-$shiftRouge: #983434;         //  rgb 152,52,52
+$shiftRouge: #A73434;         //  rgb 152,52,52
 $shiftOffwhite: #e9e9e9;      //  rgb 233,233,233
 $shiftGray: #bcbcbc;          //  rgb  188,188,188
 
@@ -15,6 +15,10 @@ $shiftYellow: #f9e435;        // rgb 249,228,53
 $shiftDarkMint: darken($shiftMint, 15%);
 $shiftSeaweed: #446262; // rgb(68, 98, 98)
 $shiftAqua: #8db9ba; // rgb(141, 185, 186)
+
+$shiftNewBlue: #2facd0;
+$modalHeaderBgColor: $shiftNewBlue;
+$defaultInputTypeBorderColor: lighten($shiftGray, 10%);
 
 $shiftBlueNDarkest: darken($shiftBlueDarker, 7%);
 
@@ -68,6 +72,8 @@ $sideBarUnselectedEven: #d6d6d6;
 
 $darkerBlueAqua: #0b888a;
 $blueAqua: #2f9999;
+
+$smartSchedNameAreaBgColor: #d9d9d9;
 
 
 // background-image: -webkit-linear-gradient( bottom, rgb( 73, 108, 170 ) 2.002%, rgb( 41, 154, 224 ) 3.003%, rgb( 0, 187, 255 ) 50%, rgb( 77, 208, 250 ) 73.755%, rgb( 125, 235, 251 ) 97.998%, rgb( 238, 248, 255 ) 100%);
