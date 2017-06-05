@@ -48,13 +48,14 @@ $buttonFadeDuration: .1s;
 
 .sa_button {
   @extend .helvetica;
-  @include border-radius(2px);
+  border-radius: 2px;
   @include make-unselectable();
   border: none;
   cursor: pointer;
   display: inline-block;
   outline: none;
   text-align: center;
+  line-height: 20px;
 
   &:hover {
     text-decoration: none;

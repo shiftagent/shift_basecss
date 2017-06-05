@@ -669,7 +669,6 @@
   background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image:  linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  @include filter-gradient($start-color, $end-color, 1); // IE9 and down
 }
 
 // Vertical gradient, from top to bottom
@@ -682,7 +681,6 @@
   background-image:  -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  @include filter-gradient($start-color, $end-color, 0); // IE9 and down
 }
 
 @mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
@@ -697,7 +695,6 @@
   background-image: -moz-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  @include filter-gradient($start-color, $end-color, 1); // IE9 and down, gets no color-stop at all for proper fallback
 }
 @mixin gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($start-color), color-stop($color-stop, $mid-color), to($end-color));
@@ -705,7 +702,6 @@
   background-image: -moz-linear-gradient(top, $start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  @include filter-gradient($start-color, $end-color, 0); // IE9 and down, gets no color-stop at all for proper fallback
 }
 @mixin gradient-radial($inner-color: #555, $outer-color: #333) {
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($inner-color), to($outer-color));
@@ -729,4 +725,3 @@
 @mixin reset-filter() {
   filter: unquote("progid:DXImage-transform@mixin Microsoft.gradient(enabled = false)");
 }
-

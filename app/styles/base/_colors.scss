@@ -1,3 +1,33 @@
+$colors: (
+  gray: (
+   0:  hsl(0, 0,  0),
+   1:  hsl(0, 0, 14),
+   2:  hsl(0, 0, 19),
+   3:  hsl(0, 0, 26),
+   4:  hsl(0, 0, 29),
+   5:  hsl(0, 0, 35),
+   6:  hsl(0, 0, 42),
+   7:  hsl(0, 0, 49),
+   8:  hsl(0, 0, 55),
+   9:  hsl(0, 0, 60),
+   10: hsl(0, 0, 66),
+   11: hsl(0, 0, 73),
+   12: hsl(0, 0, 78),
+   13: hsl(0, 0, 86),
+   14: hsl(0, 0, 89),
+   15: hsl(0, 0, 92),
+   16: hsl(0, 0, 96) //whitesmoke
+  )
+);
+
+@function color($color-name, $variant:null) {
+  @if ($variant != null) {
+    @return map-get(map-get($colors, $color-name), $variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
 // Base Colors
 $shiftGreen: #84ba6a;         //  rgb 148,186,101
 $shiftBlue: #00b3b5;          //  rgb 0,179,181
@@ -11,7 +41,7 @@ $shiftOrangedarker: #be7030;  //  rgb 190,112,48
 $shiftTan: #C2B49A;           //  rgb 194,180,154
 $shiftMint: #ACD4CC;          //  rgb  172,212,204
 $shiftSalmon: #E87162;        // rgb 232,113,98
-$shiftYellow: #F6F665;        //rgb(246, 246, 101);         //#f9e435;        // rgb 249,228,53
+$shiftYellow: #f9e435;        // rgb 249,228,53
 $shiftDarkMint: darken($shiftMint, 15%);
 $shiftSeaweed: #446262; // rgb(68, 98, 98)
 $shiftAqua: #8db9ba; // rgb(141, 185, 186)
@@ -95,4 +125,3 @@ $yellow:                #ffc40d !default;
 $orange:                $shiftOrange !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
-
