@@ -67,7 +67,7 @@ $saFormDarkThemePristineBorderColor: $shiftGray;
 $saFormInputBorderFadeDuration: .2s;
 
 .sa_select_wrapper {
-  @include border-radius($saFormBorderRadius);
+  border-radius: $saFormBorderRadius;
   background: $saFormInputBackgroundColor;
   display: inline-block;
   position: relative;
@@ -75,7 +75,7 @@ $saFormInputBorderFadeDuration: .2s;
   margin: 0 6px;
 
   & select {
-    @include border-radius($saFormBorderRadius);
+    border-radius: $saFormBorderRadius;
     appearance: none;
     background: transparent;
     border: solid $saFormBorderThickness;
@@ -195,13 +195,13 @@ $saFormInputBorderFadeDuration: .2s;
   }
 
   &:not([type="checkbox"]) {
-    @include border-radius($saFormBorderRadius);
+    border-radius: $saFormBorderRadius;
     background: $saFormInputBackgroundColor;
     border: solid $saFormBorderThickness;
     border-color: transparent;
     display: inline-block;
     outline: none;
-    @include box-shadow(none !important);
+    box-shadow: none !important;
 
     @include transition-property(border-color);
     @include transition-duration($saFormInputBorderFadeDuration);
@@ -424,7 +424,7 @@ $saFormInputBorderFadeDuration: .2s;
     }
 
     .add-on:first-child {
-      @include border-radius($saFormBorderRadius 0 0 $saFormBorderRadius);
+      border-radius: $saFormBorderRadius 0 0 $saFormBorderRadius;
       margin-right: -1px !important;
       min-width: 16px;
     }
@@ -446,7 +446,7 @@ $saFormInputBorderFadeDuration: .2s;
     }
 
     .add-on:last-child {
-      @include border-radius(0 $saFormBorderRadius $saFormBorderRadius 0);
+      border-radius: 0 $saFormBorderRadius $saFormBorderRadius 0;
       border-left: none;
       margin-left: 0 !important;
       min-width: 22px;
