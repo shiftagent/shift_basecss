@@ -7,7 +7,7 @@ $borderWidth: 1px;
 // Number of columns in the grid system
 $grid-columns:              12;
 // Padding, to be divided by two and applied to the left and right of all columns
-$gutter:                     golden-ratio(1em, 1);
+$gutter:                     modular-scale(1, 1em, 1.618);
 
 $max-width:                  1200px;
 

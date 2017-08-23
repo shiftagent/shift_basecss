@@ -3,9 +3,7 @@ $buttonFadeDuration: .1s;
 @mixin sa-button-color-generator($textColor, $backgroundColor) {
   background-color: $backgroundColor;
   color: $textColor;
-  @include transition-property(background-color);
-  @include transition-duration($buttonFadeDuration);
-  @include transition-timing-function(ease-out);
+  transition: background-color $buttonFadeDuration ease-out;
 
   &:hover {
     background-color: lighten($backgroundColor, 10%);
