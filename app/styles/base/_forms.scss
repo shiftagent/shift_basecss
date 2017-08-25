@@ -88,10 +88,7 @@ $saFormInputBorderFadeDuration: .2s;
     -moz-padding-end: 19px;
     -webkit-appearance: none;
     -o-appearance: none;
-
-    @include transition-property(border-color);
-    @include transition-duration($saFormInputBorderFadeDuration);
-    @include transition-timing-function(ease-out);
+    transition: border-color $saFormInputBorderFadeDuration ease-out;
   }
 
   & .arrow {
@@ -202,10 +199,7 @@ $saFormInputBorderFadeDuration: .2s;
     display: inline-block;
     outline: none;
     box-shadow: none !important;
-
-    @include transition-property(border-color);
-    @include transition-duration($saFormInputBorderFadeDuration);
-    @include transition-timing-function(ease-out);
+    transition: border-color $saFormInputBorderFadeDuration ease-out;
   }
 
   &[type="checkbox"] {
