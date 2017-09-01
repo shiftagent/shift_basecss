@@ -20,6 +20,10 @@ $colors: (
   )
 );
 
+@function gray($variant) {
+  @return hsl(0, 0, $variant * 4);
+}
+
 @function color($color-name, $variant:null) {
   @if ($variant != null) {
     @return map-get(map-get($colors, $color-name), $variant);
